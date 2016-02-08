@@ -1,4 +1,4 @@
-# cms
+# Content Management System
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,10 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Andrew Brown``` `````` ```http://claritytech.com``` ```andy@claritytech.com``` ```claritytech``` ```cms``` ```content management system package``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This is the Clarity Content Management System (CMS).
 
 ## Install
 
@@ -20,11 +17,39 @@ Via Composer
 $ composer require claritytech/cms
 ```
 
-## Usage
+## Setup
+
+Add the `CmsServiceProvider` to your `config/app.php` file.
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+'providers' => [
+    claritytech\cms\CmsServiceProvider::class,
+],
+```
+
+## Publishing
+
+You can choose to publish everything at once
+
+``` php
+php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider"
+```
+
+or you can publish them individually.
+
+``` php
+php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="views"
+php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="public"
+```
+
+## Migrations
+
+After package updates, make sure you run the migrations to update your database schema.
+
+``` php
+php artisan migrate
 ```
 
 ## Change log
@@ -52,10 +77,10 @@ If you discover any security related issues, please email andy@claritytech.com i
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Clarity Technology Group License. Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/claritytech/cms.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/License-Proprietary-green.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/claritytech/cms/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/claritytech/cms.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/claritytech/cms.svg?style=flat-square
