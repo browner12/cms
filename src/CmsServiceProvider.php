@@ -15,21 +15,21 @@ class CmsServiceProvider extends ServiceProvider
         }
 
         //load views
-        $this->loadViewsFrom(__DIR__.'/path/to/views', 'courier');
+        $this->loadViewsFrom(__DIR__.'/path/to/views', 'cms');
 
         //publish views
         $this->publishes([
-            __DIR__.'/path/to/views' => resource_path('views/vendor/courier'),
+            __DIR__.'/path/to/views' => resource_path('views/vendor/cms'),
         ], 'views');
 
         //publish configuration
         $this->publishes([
-            __DIR__.'/path/to/config/courier.php' => config_path('courier.php'),
+            __DIR__.'/path/to/config/cms.php' => config_path('cms.php'),
         ], 'config');
 
         //publish assets
         $this->publishes([
-            __DIR__.'/path/to/assets' => public_path('vendor/courier'),
+            __DIR__.'/path/to/assets' => public_path('vendor/cms'),
         ], 'public');
 
         $this->publishes([
