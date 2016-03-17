@@ -14,22 +14,27 @@ class CmsServiceProvider extends ServiceProvider
             require __DIR__.'/routes.php';
         }
 
+        //publish controllers
+        $this->publishes([
+            __DIR__.'/controllers' => app_path('Http/Controllers/'),
+        ], 'controllers');
+
         //load views
-        $this->loadViewsFrom(__DIR__.'/path/to/views', 'cms');
+        $this->loadViewsFrom(__DIR__.'/views', 'cms');
 
         //publish views
         $this->publishes([
-            __DIR__.'/path/to/views' => resource_path('views/vendor/cms'),
+            __DIR__.'/views' => resource_path('views/vendor/cms'),
         ], 'views');
 
         //publish configuration
         $this->publishes([
-            __DIR__.'/path/to/config/cms.php' => config_path('cms.php'),
+            __DIR__.'/config/cms.php' => config_path('cms.php'),
         ], 'config');
 
         //publish assets
         $this->publishes([
-            __DIR__.'/path/to/assets' => public_path('vendor/cms'),
+            __DIR__.'/assets' => public_path('vendor/cms'),
         ], 'public');
 
         $this->publishes([
