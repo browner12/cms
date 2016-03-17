@@ -11,7 +11,7 @@ class CmsServiceProvider extends ServiceProvider
     {
         //register routes
         if (! $this->app->routesAreCached()) {
-            require __DIR__.'/../../routes.php';
+            require __DIR__.'/routes.php';
         }
 
         //load views
