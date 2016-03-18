@@ -1,3 +1,3 @@
 <?php
 
-Route::resource('cms', '\claritytech\cms\controller\CmsController');
+Route::resource('cms', '\claritytech\cms\controllers\CmsController');
