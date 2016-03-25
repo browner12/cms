@@ -1,9 +1,9 @@
-<?php namespace claritytech\cms\controllers;
+<?php namespace claritytech\page\controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CmsController extends Controller
+class PageController extends Controller
 {
     /**
      * constructor
@@ -29,24 +29,24 @@ class CmsController extends Controller
     public function index()
     {
         //get pages
-        $pages = Cms::all();
+        $pages = Page::all();
 
         //load view
-        return view('main/cms/all', compact('pages'));
+        return view('main/page/all', compact('pages'));
     }
 
     /**
-     * manage cms pages
+     * manage page pages
      *
      * @return mixed
      */
     public function manage()
     {
         //get pages
-        $pages = Cms::all();
+        $pages = Page::all();
 
         //load view
-        return view('main/cms/manage', compact('pages'));
+        return view('main/page/manage', compact('pages'));
     }
 
     /**
