@@ -5,7 +5,9 @@ use Illuminate\Support\ServiceProvider;
 class CmsServiceProvider extends ServiceProvider
 {
     /**
+     * boot the service provider
      *
+     * @return void
      */
     public function boot()
     {
