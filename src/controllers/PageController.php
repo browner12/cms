@@ -1,4 +1,4 @@
-<?php namespace claritytech\page\controllers;
+<?php namespace claritytech\cms\controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
