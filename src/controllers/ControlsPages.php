@@ -3,21 +3,8 @@
 use claritytech\cms\models\Page;
 use Illuminate\Http\Request;
 
-class PageController
+trait ControlsPages
 {
-    /**
-     * constructor
-     *
-     * @param \Illuminate\Http\Request $request
-     */
-    public function __construct(Request $request )
-    {
-        //middleware
-        $this->middleware('auth');
-
-        //assign
-    }
-
     /**
      * Display a listing of the resource.
      *
