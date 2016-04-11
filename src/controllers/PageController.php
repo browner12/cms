@@ -18,11 +18,13 @@ class PageController extends Controller
      */
     public function __construct(Request $request)
     {
+        //parent
+        parent::__construct($request);
+
         //middleware
         $this->middleware('auth');
 
         //assign
-        $this->request = $request;
     }
 
     /**
