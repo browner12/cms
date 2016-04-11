@@ -1,21 +1,28 @@
 <?php namespace claritytech\cms\controllers;
 
+use App\Http\Controllers\Controller;
 use claritytech\cms\models\Page;
 use Illuminate\Http\Request;
 
-class PageController
+class PageController extends Controller
 {
+    /**
+     * @var \Illuminate\Http\Request
+     */
+    private $request;
+
     /**
      * constructor
      *
      * @param \Illuminate\Http\Request $request
      */
-    public function __construct(Request $request )
+    public function __construct(Request $request)
     {
         //middleware
         $this->middleware('auth');
 
         //assign
+        $this->request = $request;
     }
 
     /**
@@ -59,7 +66,7 @@ class PageController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -70,7 +77,7 @@ class PageController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -81,7 +88,7 @@ class PageController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -92,8 +99,8 @@ class PageController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -104,7 +111,7 @@ class PageController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
