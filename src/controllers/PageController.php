@@ -127,7 +127,7 @@ class PageController extends Controller
     public function slug($slug)
     {
         //get page
-        $page = Page::where('url', $slug);
+        $page = Page::where('url', $slug)->first();
 
         //load view
         return view('cms::pages/show', compact('page'));
