@@ -38,10 +38,10 @@ php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider"
 or you can publish them individually.
 
 ``` php
-php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="config"
-php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="migrations"
-php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="views"
-php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider" --tag="public"
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="config"
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="views"
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="public"
 ```
 
 ## Migrations
