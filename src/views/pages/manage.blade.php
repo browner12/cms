@@ -29,8 +29,8 @@
                 <td>{{ $page->title }}</td>
                 <td>{{ $page->url }}</td>
                 <td class="actions">
-                    <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{{ route('pages.edit', [$page->id])  }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ route('pages.destroy', [$page->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         @empty
