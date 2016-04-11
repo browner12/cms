@@ -2,6 +2,18 @@
 
 @section('content')
 
+    <div class="page-header">
+
+        <a href="{{ route('pages.manage') }}" class="btn btn-primary pull-right"><i class="fa fa-arrow-circle-left"></i> Back</a>
+
+        <div class="title">Edit Page</div>
+
+        <div class="subtitle">{{ $page->title }}</div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
     <form name="editPages" method="post" action="{{ route('pages.update', [$page->id]) }}">
 
         <!--hidden-->

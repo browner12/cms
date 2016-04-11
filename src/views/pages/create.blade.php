@@ -1,6 +1,18 @@
 @extends('layouts.master')
 
 @section('content')
+
+    <div class="page-header">
+
+        <a href="{{ route('pages.manage') }}" class="btn btn-primary pull-right"><i class="fa fa-arrow-circle-left"></i> Back</a>
+
+        <div class="title">Create Page</div>
+
+        <div class="subtitle"></div>
+
+        <div class="clearfix"></div>
+
+    </div>
     
     <form name="createPage" method="post" action="{{ route('pages.store') }}">
 
