@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.' . config('cms.default_layout', 'master'))
 
 @section('content')
 

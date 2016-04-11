@@ -38,7 +38,7 @@ class PageController extends Controller
         $pages = Page::all();
 
         //load view
-        return view('cms::all', compact('pages'));
+        return view('cms::pages/all', compact('pages'));
     }
 
     /**
@@ -52,7 +52,7 @@ class PageController extends Controller
         $pages = Page::all();
 
         //load view
-        return view('cms::manage', compact('pages'));
+        return view('cms::pages/manage', compact('pages'));
     }
 
     /**
@@ -63,7 +63,7 @@ class PageController extends Controller
     public function create()
     {
         //load view
-        return view('cms::create');
+        return view('cms::pages/create');
     }
 
     /**
@@ -89,7 +89,7 @@ class PageController extends Controller
         $page = Page::findOrFail($pageId);
 
         //load view
-        return view('cms::show', compact('page'));
+        return view('cms::pages/show', compact('page'));
     }
 
     /**
@@ -104,7 +104,7 @@ class PageController extends Controller
         $page = Page::findOrFail($pageId);
 
         //load view
-        return view('cms::edit', compact('page'));
+        return view('cms::pages/edit', compact('page'));
     }
 
     /**
