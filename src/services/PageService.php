@@ -16,6 +16,7 @@ class PageService
         $page = new Page();
         $page->title = $input['title'];
         $page->url = $input['url'];
+        $page->body = $input['body'];
         $page->save();
 
         //return page
@@ -34,6 +35,7 @@ class PageService
         $page = Page::find($pageId);
         $page->title = $input['title'];
         $page->url = $input['url'];
+        $page->body = $input['body'];
         $page->save();
 
         //return page

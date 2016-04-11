@@ -64,9 +64,6 @@ Then publish and run all new migrations.
 
 ``` bash
 php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="migrations"
-```
-
-``` bash
 php artisan migrate
 ```
 
