@@ -52,5 +52,8 @@ class PageService
 
         //delete
         $page->delete();
+
+        //return page
+        return $page;
     }
 }

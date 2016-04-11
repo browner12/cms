@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Controller;
 use claritytech\cms\models\Page;
+use claritytech\cms\services\PageService;
+use Exception;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -10,13 +12,18 @@ class PageController extends Controller
      * @var \Illuminate\Http\Request
      */
     protected $request;
+    /**
+     * @var \claritytech\cms\services\PageService
+     */
+    private $service;
 
     /**
      * constructor
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request              $request
+     * @param \claritytech\cms\services\PageService $service
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, PageService $service)
     {
         //parent
         parent::__construct($request);
@@ -25,6 +32,7 @@ class PageController extends Controller
         $this->middleware('auth');
 
         //assign
+        $this->service = $service;
     }
 
     /**
@@ -69,12 +77,30 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        //try
+        try {
+            $page = $this->service->store($this->request->only(['title', 'url', 'body']));
+        }
+
+        //exception
+        catch(Exception $e){
+
+            //message
+            modal('Error', $e);
+
+            //send back
+            return back();
+        }
+
+        //message
+        alert('Success', 'You have successfully stored the page <b>' . $page->title . '</b>.');
+
+        //send back
+        return back();
     }
 
     /**
@@ -110,13 +136,31 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $pageId
+     * @param  int $pageId
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $pageId)
+    public function update($pageId)
     {
-        //
+        //try
+        try {
+            $page = $this->service->update($pageId, $this->request->only(['title', 'url', 'body']));
+        }
+
+        //exception
+        catch(Exception $e){
+
+            //message
+            modal('Error', $e);
+
+            //send back
+            return back();
+        }
+
+        //message
+        alert('Success', 'You have successfully updated the page <b>' . $page->title . '</b>.');
+
+        //send back
+        return back();
     }
 
     /**
@@ -127,6 +171,25 @@ class PageController extends Controller
      */
     public function destroy($pageId)
     {
-        //
+        //try
+        try {
+            $page = $this->service->delete($pageId);
+        }
+        
+        //exception
+        catch(Exception $e){
+        
+            //message
+            modal('Error', $e);
+            
+            //send back
+            return back();
+        }
+
+        //message
+        alert('Success', 'You have successfully deleted the page <b>' . $page->title . '</b>.');
+
+        //send back
+        return back();
     }
 }
