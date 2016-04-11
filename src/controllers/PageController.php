@@ -119,6 +119,21 @@ class PageController extends Controller
     }
 
     /**
+     * display the page
+     *
+     * @param string $slug
+     * @return mixed
+     */
+    public function slug($slug)
+    {
+        //get page
+        $page = Page::where('url', $slug);
+
+        //load view
+        return view('cms::pages/show', compact('page'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int $pageId
