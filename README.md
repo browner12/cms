@@ -31,13 +31,13 @@ Add the `CmsServiceProvider` to your `config/app.php` file.
 
 You can choose to publish everything at once
 
-``` php
+``` bash
 php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider"
 ```
 
 or you can publish them individually.
 
-``` php
+``` bash
 php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="config"
 php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="migrations"
 php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="views"
@@ -48,9 +48,38 @@ php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag
 
 After package updates, make sure you run the migrations to update your database schema.
 
-``` php
+``` bash
 php artisan migrate
 ```
+
+## Updating
+
+To update the package start with composer.
+
+``` bash
+composer update
+```
+
+Then publish and run all new migrations.
+
+``` bash
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider" --tag="migrations"
+```
+
+``` bash
+php artisan migrate
+```
+
+If upgrading a major version, please take note of any breaking changes and address them as need be.
+
+## Assumptions
+
+While we try to stay as independent as possible, there are specific assumptions this package makes in order to function correctly and still be useful. Make sure your application meets all of these assumptions.
+
++ Bootstrap v4 is available.
++ FontAwesome v4.5 is available.
++ A middleware called 'web' is available.
++ A base controller exists that is autoloadable from `App\Http\Controllers\Controller`. This base controller accepts `Illuminate\Http\Request` as the first parameter in its constructor.
 
 ## Change log
 
