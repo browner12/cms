@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <form name="createCms" method="post" action="{{ route('cms.store') }}">
+    <form name="createPage" method="post" action="{{ route('pages.store') }}">
 
         <!--hidden-->
         <input name="_token" type="hidden" value="{{ csrf_token() }}" />

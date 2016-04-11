@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form name="editCms" method="post" action="{{ route('cms.update', [$cms->id]) }}">
+    <form name="editPages" method="post" action="{{ route('pages.update', [$page->id]) }}">
 
         <!--hidden-->
         <input name="_token" type="hidden" value="{{ csrf_token() }}" />
