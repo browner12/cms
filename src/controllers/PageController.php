@@ -9,7 +9,7 @@ class PageController extends Controller
     /**
      * @var \Illuminate\Http\Request
      */
-    private $request;
+    protected $request;
 
     /**
      * constructor
