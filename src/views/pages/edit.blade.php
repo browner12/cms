@@ -24,7 +24,7 @@
         <div class="form-group row {{ validation_state($errors, ['title']) }}">
             <label for="title" class="col-sm-2 form-control-label">Title</label>
             <div class="col-sm-10">
-                <input name="title" type="text" class="form-control" id="title" placeholder="Title" value="{{ old('title') }}" />
+                <input name="title" type="text" class="form-control" id="title" placeholder="Title" value="{{ old('title', $page->title) }}" />
             </div>
         </div>
 
@@ -32,7 +32,7 @@
         <div class="form-group row {{ validation_state($errors, ['url']) }}">
             <label for="url" class="col-sm-2 form-control-label">URL</label>
             <div class="col-sm-10">
-                <input name="url" type="text" class="form-control" id="url" placeholder="URL" value="{{ old('url') }}" />
+                <input name="url" type="text" class="form-control" id="url" placeholder="URL" value="{{ old('url', $page->url) }}" />
             </div>
         </div>
 
@@ -40,7 +40,7 @@
         <div class="form-group row {{ validation_state($errors, ['body']) }}">
             <label for="body" class="col-sm-2 form-control-label">Body</label>
             <div class="col-sm-10">
-                <textarea name="body" rows="10" class="form-control" id="body" placeholder="Body">{{ old('body') }}</textarea>
+                <textarea name="body" rows="10" class="form-control" id="body" placeholder="Body">{{ old('body', $page->body) }}</textarea>
             </div>
         </div>
 
