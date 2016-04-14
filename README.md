@@ -32,7 +32,7 @@ Add the `CmsServiceProvider` to your `config/app.php` file.
 You can choose to publish everything at once
 
 ``` bash
-php artisan vendor:publish --provider="Vendor\Providers\PackageServiceProvider"
+php artisan vendor:publish --provider="claritytech\cms\CmsServiceProvider"
 ```
 
 or you can publish them individually.
@@ -77,6 +77,7 @@ While we try to stay as independent as possible, there are specific assumptions 
 + FontAwesome v4.5 is available.
 + A middleware called 'web' is available.
 + A base controller exists that is autoloadable from `App\Http\Controllers\Controller`. This base controller accepts `Illuminate\Http\Request` as the first parameter in its constructor.
++ Layout called 'master'.
 
 ## Change log
 

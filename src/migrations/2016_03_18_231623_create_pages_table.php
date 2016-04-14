@@ -17,6 +17,7 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('url');
             $table->text('body');
+            $table->string('layout');
             $table->unsignedInteger('views');
             $table->timestamps();
             $table->softDeletes();

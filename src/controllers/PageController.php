@@ -70,8 +70,11 @@ class PageController extends Controller
      */
     public function create()
     {
+        //get layouts
+        $layouts = config('cms.available_layouts', []);
+
         //load view
-        return view('cms::pages/create');
+        return view('cms::pages/create', compact('layouts'));
     }
 
     /**
@@ -144,8 +147,11 @@ class PageController extends Controller
         //get page
         $page = Page::findOrFail($pageId);
 
+        //get layouts
+        $layouts = config('cms.available_layouts', []);
+
         //load view
-        return view('cms::pages/edit', compact('page'));
+        return view('cms::pages/edit', compact('page', 'layouts'));
     }
 
     /**

@@ -13,4 +13,15 @@ return [
 
     'default_layout' => '',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Available Layouts
+    |--------------------------------------------------------------------------
+    |
+    | This option defines the available layouts for the CMS.
+    |
+    */
+
+    'available_layouts' => [],
+
 ];

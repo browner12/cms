@@ -35,6 +35,19 @@
             </div>
         </div>
 
+        <!--layout-->
+        <div class="form-group row {{ validation_state($errors, ['layout']) }}">
+            <label for="layout" class="col-sm-2 form-control-label">Layout</label>
+            <div class="col-sm-10">
+                <select name="layout" class="form-control c-select" id="layout">
+                    <option disabled selected>Layout</option>
+                    @foreach($layouts as $layout)
+                        <option value="{{ $layout }}">{{ $layout }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
         <!--body-->
         <div class="form-group row {{ validation_state($errors, ['body']) }}">
             <label for="body" class="col-sm-2 form-control-label">Body</label>
